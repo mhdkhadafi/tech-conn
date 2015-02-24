@@ -1,0 +1,52 @@
+<div class="header">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+    </ul>
+  </nav>
+  <h3 class="text-muted">TECH-CONN</h3>
+  <hr class="half-rule">
+</div>
+<div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Notice</h3>
+  </div>
+  <div class="panel-body">
+      <h4> Thank you! Your connections have been saved.</h1>
+</div>
+</div>
+
+
+<h1>Connections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Faculty firstname</th>
+      <th>Faculty lastname</th>
+      <th>Connection firstname</th>
+      <th>Connection lastname</th>
+      <th>Company</th>
+      <th>Position</th>
+      <th>Linkedin URL</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections.each do |connection| %>
+      <tr>
+        <td><%= connection.pfirstname %></td>
+        <td><%= connection.plastname %></td>
+        <td><%= connection.cfirstname %></td>
+        <td><%= connection.clastname %></td>
+        <td><%= connection.company %></td>
+        <td><%= connection.position %></td>
+        <td><%= connection.lurl %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

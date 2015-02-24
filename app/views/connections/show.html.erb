@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plastname:</strong>
+  <%= @connection.plastname %>
+</p>
+
+<p>
+  <strong>Pfirstname:</strong>
+  <%= @connection.pfirstname %>
+</p>
+
+<p>
+  <strong>Clastname:</strong>
+  <%= @connection.clastname %>
+</p>
+
+<p>
+  <strong>Cfirstname:</strong>
+  <%= @connection.cfirstname %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @connection.company %>
+</p>
+
+<%= link_to 'Edit', edit_connection_path(@connection) %> |
+<%= link_to 'Back', connections_path %>

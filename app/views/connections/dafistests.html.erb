@@ -1,0 +1,28 @@
+<!-- <h1>Connections#main</h1>
+<p>Find me in app/views/connections/main.html.erb</p> -->
+<link rel="stylesheet" type="text/css" src="/assets/stylesheets/connections.css.scss">
+
+<h1>Checkboxes</h1>
+
+<h1>Checkboxes</h1>
+<%= form_tag '/detail' do %>
+  <p> List of Faculties </p>
+  <div id ="checkboxdiv"> 
+  <% for at in AccessToken.uniq.pluck(:firstname, :lastname, :id).sort   do %>
+      <%= check_box_tag "at_ids[]", at[2] %>
+      <%= at[0] + " " + at[1] %>
+  </br>
+  <% end %>
+  </div>
+</br>
+  <p> List of Companies </p>
+  <div id ="checkboxdiv"> 
+  <% for conn in Connection.uniq.pluck(:company).sort   do %>
+      <%= check_box_tag "conn_ids[]", conn %>
+      <%= conn %>
+  </br>
+  <% end %>
+  </div>
+</br>
+  <%= submit_tag "Search" %>
+<% end %>

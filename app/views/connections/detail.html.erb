@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#connTable').dataTable();
+      } );
+    </script>
+<div class="header">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+    </ul>
+  </nav>
+  <h3 class="text-muted"><%= link_to 'TECH-CONN', root_path %></h3>
+      <hr class="half-rule">
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3>Connection details</h3>
+  </div>
+  <div class="panel-body">
+    <table id="connTable" class="table table-hover table-striped table-bordered">
+  <thead>
+    <tr>
+     <th>Faculty Name</th>
+      <th>Connection Name</th>
+      <th>Company</th>
+      <th>Position</th>
+      <th>Linkedin URL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections.each do |connection| %>
+      <tr>
+        <td><%= connection[:pfirstname]+" "+connection[:plastname]%></td>
+        <td><%= connection[:cfirstname]+" "+connection[:clastname]%></td>
+        <td><%= connection.company %></td>
+        <td><%= connection.position %></td>
+        <td><%= connection.lurl %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  </div>

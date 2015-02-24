@@ -1,0 +1,31 @@
+<!-- <h1>Connections#main</h1>
+<p>Find me in app/views/connections/main.html.erb</p> -->
+<!-- <h1><%= @faculty[:ffirstname].to_s + " " + @faculty[:flastname].to_s + "'s Connections"%></h1>
+</br>
+<p><%= "Token: " + @faculty[:ftoken]%></p>
+</br>
+<% @arrconn.each do |element| %>
+<li><%= @faculty[:ffirstname].to_s  + " " + @faculty[:flastname].to_s + " " + element[:cfirstname].to_s  + " " + element[:clastname].to_s + " " + element[:company].to_s + " " + element[:title].to_s + " " + element[:url].to_s %></li>
+<% end %> -->
+
+
+<div class="header">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+    </ul>
+  </nav>
+  <h3 class="text-muted"><%= link_to 'TECH-CONN', root_path %></h3>
+  <hr class="half-rule">
+</div>
+<div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Notice</h3>
+  </div>
+  <div class="panel-body">
+	<h3><%= "Thank you, " + @faculty[:ffirstname].to_s + " " + @faculty[:flastname].to_s + "! Your connections have been saved"%></h4>
+		</div>
+	</div>
+</div>
+</div>

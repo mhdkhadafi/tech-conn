@@ -1,0 +1,6 @@
+<!-- <h1>Connections#callback</h1>
+<p>Find me in app/views/connections/callback.html.erb</p> -->
+<h1><%= @arrconn[1][:ffirstname] + " " + @arrconn[1][:flastname] + "'s Connections"%></h1>
+<% @arrconn.each do |element| %>
+<li><%= element[:ffirstname]  + " " + element[:flastname] + " - " + element[:cfirstname]  + " " + element[:clastname] + " - " + element[:company] + " - " + element[:title] + " - " + element[:url] %></li>
+<% end %>

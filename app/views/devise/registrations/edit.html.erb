@@ -1,0 +1,102 @@
+<style>
+  body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+  </style>
+
+  <script>
+    window.console = window.console || function(t) {};
+    window.open = function(){ console.log('window.open is disabled.'); };
+    window.print = function(){ console.log('window.print is disabled.'); };
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+  </script>
+
+
+<body>
+<div class="wrapper">
+  <div class="field form-signin">
+    <h2 class="form-signin-heading">Edit Profile</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+   <div class="field">
+    <%= f.text_field :login, autofocus: true, placeholder: 'Username', class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control' %><br />
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <i> (leave blank if you don't want to change it)</i>
+    <%= f.password_field :password, autocomplete: "off", placeholder: 'new password', class: 'form-control' %>
+
+  </div>
+
+  <div class="field">
+    
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'password confirmation', class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <i>(we need your current password to confirm your changes)</i>
+    <%= f.password_field :current_password, autocomplete: "off", placeholder: 'current password', class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", :class=>"btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>
+</div>
+</div>
+</body>

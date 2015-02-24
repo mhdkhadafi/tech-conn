@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+<script src="/assets/jquery.dataTables.js" type="text/javascript"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#connTable').dataTable();
+      } );
+    </script>
+<div class="header">
+  <nav>
+    <% if user_signed_in? %>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+    </ul>
+    <% end %>
+  </nav>
+  <h3 class="text-muted"><%= link_to 'TECH-CONN', root_path %></h3>
+      <hr class="half-rule">
+</div>
+<table id="connTable" class="table table-hover table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Number of Connections</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections.each do |connection| %>
+      <tr>
+        <td><%= connection[0] %></td>
+        <td><%= connection[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

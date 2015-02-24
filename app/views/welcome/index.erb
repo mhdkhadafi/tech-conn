@@ -1,0 +1,40 @@
+<body>
+<div class="wrapper">
+<div style="height:250px;margin-top:50px" id="lga">
+    </br>
+<!-- <img src="./app/assets/images/tech-conn logo.png"  alt="logo" /> -->
+      <%=image_tag("tech-conn logo.png", size:"693x140",alt: "logo", class: "displayed")%>
+
+    </br>
+  </div>
+<center>
+	<div class="jumbotron">
+      <article class="container" id="feature">
+        <div class="row">
+          <p>
+          <div class="col-md-4 admin">
+          	<a class="btn btn-primary btn-lg" href="/users/sign_in" role="button"  style="width:200px;height:60px;font-size:30px;color:#FFFFFF">Admin</a>
+          </div>
+        </p>
+        <p>
+          <div class="col-md-4 faculty">
+          	<a class="btn btn-success btn-lg" href='/users/sign_in' role="button" style="width:200px;height:60px;font-size:30px;color:#FFFFFF">Faculty</a>
+          </div>
+        </p>
+          <div class="col-md-4 student">
+           <a class="btn btn-warning btn-lg" href="connections" role="button" style="width:200px;height:60px;font-size:30px;color:#FFFFFF">Students</a>
+          </div>
+        
+        </div>
+      </article>
+    </div>			
+</center>
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.username %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% end %>
+</div>
+</body>
