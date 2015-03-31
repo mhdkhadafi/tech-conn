@@ -1,4 +1,3 @@
 # tech-conn app
 
-tech-conn.herokuapp.com
-
+Ruby on Rails app to fecth LinkedIn connections for Cornell Tech's staff to support student's job search
